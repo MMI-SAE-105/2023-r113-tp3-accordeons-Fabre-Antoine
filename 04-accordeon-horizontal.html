@@ -47,9 +47,9 @@
   </head>
   <body>
     <h1>Accordéon horizontal</h1>
-    <ul id="accordeon">
-      <li>
-        <figure>
+    <ul id="accordeon" x-data="{isOpen  :0}">
+      <li :class="{actif:isOpen === 1,}" class="actif">
+        <figure @mouseover="isOpen = 1" @mouseout="isOpen= 0">
           <img src="https://picsum.photos/100?random=1" alt="" width="102">
           <figcaption>
             <h3>Lorem, ipsum dolor.</h3>
@@ -57,8 +57,8 @@
           </figcaption>
         </figure>
       </li>
-      <li class="actif">
-        <figure>
+      <li :class="{actif:isOpen === 2,}">
+        <figure @mouseover="isOpen = 2" @mouseout="isOpen= 0">
           <img src="https://picsum.photos/100?random=2" alt="" width="102">
           <figcaption>
             <h3>Voluptate, delectus iure.</h3>
@@ -66,8 +66,8 @@
           </figcaption>
         </figure>
       </li>
-      <li>
-        <figure>
+      <li :class="{actif:isOpen === 3,}">
+        <figure @mouseover="isOpen = 3" @mouseout="isOpen= 0">
           <img src="https://picsum.photos/100?random=3" alt="" width="102">
           <figcaption>
             <h3>Pariatur, expedita mollitia.</h3>
