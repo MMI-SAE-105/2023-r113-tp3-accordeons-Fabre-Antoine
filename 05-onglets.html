@@ -22,7 +22,8 @@
         margin: 0px;
       }
       #onglets ul button {
-        background-color: royalblue;;
+        background-color: royalblue;
+        border-radius: 25px;
       }
       #onglets ul button li {
         padding: 10px;
@@ -33,6 +34,7 @@
       }
       #onglets ul button li:hover {
         background-color: #1e90ff;
+        border-radius: 25px;
       }
 
 
@@ -40,22 +42,22 @@
   </head>
   <body>
     <h1>Onglets</h1>
-    <div id="onglets" x-data="{ouvert : 0,}">
+    <div id="onglets" x-data="{IsOpen : 1}">
       <ul role="tablist">
-        <button><li role="tab" :class="{actif:IsOpen === 1}" @click="ouvert= 1" >Onglet 1</li></button>
-        <button><li role="tab" :class="{actif:IsOpen === 2}" @click="ouvert= 2" >Onglet 2</li></button>
-        <button><li role="tab" :class="{actif:IsOpen === 2}" @click="ouvert= 3">Onglet 3</li></button>
+        <button><li role="tab" :class="{actif:IsOpen === 1}" @click="IsOpen= 1" >Onglet 1</li></button>
+        <button><li role="tab" :class="{actif:IsOpen === 2}" @click="IsOpen= 2" >Onglet 2</li></button>
+        <button><li role="tab" :class="{actif:IsOpen === 2}" @click="IsOpen= 3">Onglet 3</li></button>
       </ul>
       <div>
-        <div role="tabpanel" :class="{actif:ouvert === 1,}">
+        <div role="tabpanel" :class="{actif:IsOpen === 1,}">
           <h1>Panneau 1</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident expedita non quibusdam numquam nulla inventore, distinctio optio temporibus iure! A dolor minima itaque corrupti in fuga id omnis explicabo?</p>
         </div>
-        <div role="tabpanel" :class="{actif:ouvert === 2,}">
+        <div role="tabpanel" :class="{actif:IsOpen === 2,}">
           <h1>Panneau 2</h1>
           <p>Ut hic numquam omnis, accusantium animi pariatur necessitatibus doloribus, atque debitis iusto eveniet sit sequi ipsa voluptas placeat laboriosam aperiam quam! Accusamus animi commodi blanditiis tempora obcaecati sunt sint unde.</p>
         </div>
-        <div role="tabpanel" :class="{actif:ouvert === 3,}">
+        <div role="tabpanel" :class="{actif:IsOpen=== 3,}">
           <h1>Panneau 3</h1>
           <p>Aliquid provident expedita odit excepturi, nostrum quasi illo voluptatibus nihil libero unde. Minus perferendis sequi vel doloribus aut facere enim, velit neque odit hic repellat harum! Dignissimos delectus vitae dolore!</p>
         </div>
