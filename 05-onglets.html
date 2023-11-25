@@ -21,15 +21,30 @@
         padding: 0px;
         margin: 0px;
       }
+      #onglets ul button {
+        background-color: royalblue;;
+      }
+      #onglets ul button li {
+        padding: 10px;
+        margin: 0px;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+      }
+      #onglets ul button li:hover {
+        background-color: #1e90ff;
+      }
+
+
     </style>
   </head>
   <body>
     <h1>Onglets</h1>
     <div id="onglets" x-data="{ouvert : 0,}">
       <ul role="tablist">
-        <li role="tab" @click="ouvert= 1" ><button>Onglet 1</button></li>
-        <li role="tab" @click="ouvert= 2"><button>Onglet 2</button></li>
-        <li role="tab" @click="ouvert= 3"><button>Onglet 3</button></li>
+        <button><li role="tab" :class="{actif:IsOpen === 1}" @click="ouvert= 1" >Onglet 1</li></button>
+        <button><li role="tab" :class="{actif:IsOpen === 2}" @click="ouvert= 2" >Onglet 2</li></button>
+        <button><li role="tab" :class="{actif:IsOpen === 2}" @click="ouvert= 3">Onglet 3</li></button>
       </ul>
       <div>
         <div role="tabpanel" :class="{actif:ouvert === 1,}">
