@@ -37,6 +37,16 @@
         border-radius: 25px;
       }
 
+      .parent>div.actif {
+        opacity: 1;
+      }
+      .parent>div {
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        opacity: 0;
+        transition: opacity 0,5s ease-in-out;
+      }
 
     </style>
   </head>
@@ -48,7 +58,7 @@
         <button><li role="tab" :class="{actif:IsOpen === 2}" @click="IsOpen= 2" >Onglet 2</li></button>
         <button><li role="tab" :class="{actif:IsOpen === 2}" @click="IsOpen= 3">Onglet 3</li></button>
       </ul>
-      <div>
+      <div class="parent">
         <div role="tabpanel" :class="{actif:IsOpen === 1,}">
           <h1>Panneau 1</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident expedita non quibusdam numquam nulla inventore, distinctio optio temporibus iure! A dolor minima itaque corrupti in fuga id omnis explicabo?</p>
